@@ -2,25 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour {
+public class PlayerMovement : MonoBehaviour
+{
     [SerializeField]
-    private float _speed = 5f;
-    [SerializeField]
-    private float _maxspeed = 200f;
-
-    void Update() {
+    private float _speed = 200f;
+    private Rigidbody2D body;
+    private void Start()
+    {
+        body = GetComponent<Rigidbody2D>();
+    }
+    void Update()
+    {
         transform.Rotate(0, 0, Input.GetAxis("Horizontal") * 40f * -Time.deltaTime * 5);
-        float velocity = 0;
-        velocity = velocity + _speed * Time.deltaTime;
-
-        if (velocity > _maxspeed) {
-            velocity = _maxspeed;
+        float forward = Input.GetAxis("Vertical");
+        if (forward < 0)
+        {
+            forward = 0;
         }
-
-        if (Input.GetKey(KeyCode.W)) {
-            transform.position += transform.up * velocity;
-
-        }
+        body.velocity = transform.up * forward * _speed * Time.fixedDeltaTime * 50f;
 
     }
 }
