@@ -11,26 +11,23 @@ public class FireSpread : MonoBehaviour {
     private float fireCooldown = 100f;
     private float fireCooldownTime = 35f;
 
+    [SerializeField] RectTransform _firebarBackground;
+    [SerializeField] RectTransform _firebarForeground;
+
     private bool canSpawn = true;
 
     // Update is called once per frame
     void Update() {
-        if (Input.GetKey(KeyCode.Space))
-        {
-            if (fireCooldown > 0)
-            {
+        if (Input.GetKey(KeyCode.Space)) {
+            if (fireCooldown > 0) {
                 fireCooldown -= fireCooldownTime * Time.deltaTime;
-            } else
-            {
+            } else {
                 fireCooldown = 0;
             }
-        } else
-        {
-            if (fireCooldown < 100)
-            {
+        } else {
+            if (fireCooldown < 100) {
                 fireCooldown += fireCooldownTime * 0.65f * Time.deltaTime;
-            } else
-            {
+            } else {
                 fireCooldown = 100;
             }
         }
@@ -41,20 +38,12 @@ public class FireSpread : MonoBehaviour {
         if (Input.GetKeyUp(KeyCode.Space)) {
             canSpawn = false;
         }
-        /*if (Input.GetKey(KeyCode.Space))
-        {
-            if (transform.localScale.x < scaleLimit.x)
-            {
-                transform.localScale += fireScale;
-            }
-            
-        } else
-        {
-            if (transform.localScale.x > 0)
-            {
-                transform.localScale -= fireScale;
-            }
-        }*/
+
+        // Update FIREbar
+        float maxWidth = _firebarBackground.sizeDelta.x;
+        float percentage = fireCooldown / 100f;
+
+        _firebarForeground.sizeDelta = new Vector2(maxWidth * percentage, _firebarForeground.sizeDelta.y);
     }
 
     IEnumerator SpawnParticlesRoutine() {
@@ -64,11 +53,9 @@ public class FireSpread : MonoBehaviour {
                 GameObject particleObj = Instantiate(particle, transform.position, Quaternion.identity);
                 particleObj.transform.parent = containerFlame.transform;
                 float initialAngle = transform.rotation.eulerAngles.z + Random.Range(-10f, 10f);
-                if (Input.GetKey(KeyCode.W))
-                {
+                if (Input.GetKey(KeyCode.W)) {
                     particleObj.GetComponent<ParticleBehaviour>().isFaster = true;
-                } else
-                {
+                } else {
                     particleObj.GetComponent<ParticleBehaviour>().isFaster = false;
                 }
                 particleObj.transform.rotation = Quaternion.Euler(0, 0, initialAngle);
