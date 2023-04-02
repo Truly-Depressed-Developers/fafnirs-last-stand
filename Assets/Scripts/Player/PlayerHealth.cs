@@ -5,22 +5,28 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour {
     [SerializeField] float _maxHp;
-    float _currentHp;
+    [SerializeField] float _currentHp;
+    [SerializeField] RectTransform _healthbarBackground;
+    [SerializeField] RectTransform _healthbarForeground;
 
     public static event Action OnPlayerDeath;
 
     void Start() {
-        if(_maxHp == 0) {
+        if (_maxHp == 0) {
             Debug.LogError("Max HP can't be 0!");
         }
 
         _currentHp = _maxHp;
+
+        AdjustHealthbar();
     }
 
     public void TakeDamage(float damage) {
         _currentHp -= damage;
 
-        if(_currentHp <= 0) {
+        AdjustHealthbar();
+
+        if (_currentHp <= 0) {
             // die
 
             OnPlayerDeath();
@@ -28,10 +34,18 @@ public class PlayerHealth : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if(collision.tag == "Bullet") {
+        if (collision.tag == "Bullet") {
             Bullet bullet = collision.GetComponent<Bullet>();
 
             TakeDamage(bullet.damage);
+            Destroy(collision.gameObject);
         }
+    }
+
+    private void AdjustHealthbar() {
+        float maxWidth = _healthbarBackground.sizeDelta.x;
+        float HPPercentage = _currentHp / _maxHp;
+
+        _healthbarForeground.sizeDelta = new Vector2(maxWidth * HPPercentage, _healthbarForeground.sizeDelta.y);
     }
 }
