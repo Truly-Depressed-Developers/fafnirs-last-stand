@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714a89e50e0772d418c20e79a8dd629e, type: 3}
   m_Name: Level 2
   m_EditorClassIdentifier: 
-  stageName: Level 2
-  imageURI: 
-  scoreToUnlock: 1500
+  stageName: Snowy tundra
+  sprite: {fileID: 21300000, guid: 87c4d49331110ee4c87284b312cfcf43, type: 3}
+  scoreToUnlock: 0

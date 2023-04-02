@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 714a89e50e0772d418c20e79a8dd629e, type: 3}
   m_Name: Level 1
   m_EditorClassIdentifier: 
-  stageName: Level 1
-  imageURI: 
+  stageName: Plains
+  sprite: {fileID: 21300000, guid: 4af5bbe23b53c8846ad2ba1bd178baa4, type: 3}
   scoreToUnlock: 0

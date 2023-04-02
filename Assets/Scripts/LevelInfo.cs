@@ -5,6 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="levelinfo", menuName ="Create Level Info")]
 public class LevelInfo : ScriptableObject {
     public string stageName;
-    public string imageURI;
+    public Sprite sprite;
     public int scoreToUnlock;
 }
