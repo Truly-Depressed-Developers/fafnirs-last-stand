@@ -1,0 +1,75 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: dragon
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 4f4de8a0b34319946b5f513dd524fb3c, type: 3}
+    - {fileID: 2800000, guid: 95d6ecc09d6eb124da213824a344dd3c, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -358818834, guid: 4f4de8a0b34319946b5f513dd524fb3c, type: 3}
+  - {fileID: -810888550, guid: 4f4de8a0b34319946b5f513dd524fb3c, type: 3}
+  - {fileID: -45650858, guid: 4f4de8a0b34319946b5f513dd524fb3c, type: 3}
+  - {fileID: 1705057562, guid: 4f4de8a0b34319946b5f513dd524fb3c, type: 3}
+  - {fileID: 519600456, guid: 4f4de8a0b34319946b5f513dd524fb3c, type: 3}
+  - {fileID: -1466210555, guid: 4f4de8a0b34319946b5f513dd524fb3c, type: 3}
+  - {fileID: 71069219, guid: 4f4de8a0b34319946b5f513dd524fb3c, type: 3}
+  - {fileID: -1912300576, guid: 4f4de8a0b34319946b5f513dd524fb3c, type: 3}
+  - {fileID: -1879346578, guid: 4f4de8a0b34319946b5f513dd524fb3c, type: 3}
+  - {fileID: 1798356688, guid: 4f4de8a0b34319946b5f513dd524fb3c, type: 3}
+  - {fileID: -1213653458, guid: 4f4de8a0b34319946b5f513dd524fb3c, type: 3}
+  - {fileID: 991364625, guid: 4f4de8a0b34319946b5f513dd524fb3c, type: 3}
+  - {fileID: 1127347416, guid: 4f4de8a0b34319946b5f513dd524fb3c, type: 3}
+  - {fileID: -502528898, guid: 4f4de8a0b34319946b5f513dd524fb3c, type: 3}
+  - {fileID: 21300000, guid: 95d6ecc09d6eb124da213824a344dd3c, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - Dragon_3
+  - Dragon_2
+  - Dragon_1
+  - Dragon_0
+  - Dragon_7
+  - Dragon_6
+  - Dragon_5
+  - Dragon_4
+  - Dragon_9
+  - Dragon_8
+  - Dragon_12
+  - Dragon_13
+  - Dragon_10
+  - Dragon_11
+  - Head of a headless dragun
+  m_RenderDataMap: {}
+  m_Tag: dragon
+  m_IsVariant: 0
