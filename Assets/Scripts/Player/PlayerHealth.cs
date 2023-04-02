@@ -19,8 +19,6 @@ public class PlayerHealth : MonoBehaviour {
         _currentHp = _maxHp;
 
         AdjustHealthbar();
-
-        OnPlayerDeath += PlayerDeath;
     }
 
     public void TakeDamage(float damage) {
