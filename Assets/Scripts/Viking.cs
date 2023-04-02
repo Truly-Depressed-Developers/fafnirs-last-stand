@@ -6,40 +6,51 @@ using UnityEngine.UIElements;
 
 public class Viking : MonoBehaviour
 {
-    private float timer;
-
+    // Attack speed
+    private float timerAS;
     public float attackSpeed;
+    // Movement speed
+    private float timerMS;
+    public float moveInterval;
+
     public GameObject Projectile;
     public Vector3 arrowTarget;
-    public float arrowSpeed;
-    public Vector3 vikingTarget;
-    public float vikingSpeed;
+    public float projectileSpeed;
+
+    [SerializeField]
+    private float stopDistance;
+
+    public GameObject Bullets;
 
     void Start()
     {
         Debug.Log("Spawned Viking");
     }
 
-    void FixedUpdate()
-    {
-        timer += Time.deltaTime;
-        if (timer > attackSpeed)
-        {
-            timer -= attackSpeed;
-
-            Debug.Log("Shot an arrow");
-
-            // Pass parameters to the spawned child
-            Vector3 outputArrow = arrowTarget.normalized * arrowSpeed;
-            GameObject topFloorObj = Instantiate(Projectile, gameObject.transform.localPosition, Quaternion.identity);
-            topFloorObj.GetComponent<Projectile>().movement = outputArrow;
-        }
-    }
-
     void Update()
     {
-        // Make viking move
-        Vector3 outputViking = vikingTarget.normalized * vikingSpeed;
-        gameObject.transform.localPosition += outputViking;
+        // Attack speed
+        timerAS += Time.deltaTime;
+        if (timerAS > attackSpeed)
+        {
+            timerAS -= attackSpeed;
+            arrowTarget = PlayerPosition.Instance.transform.position - transform.position;
+            arrowTarget.z = 0f;
+            Vector3 outputArrow = arrowTarget.normalized * projectileSpeed;
+            GameObject projectile = Instantiate(Projectile, transform.position, Quaternion.identity, Bullets.transform);
+            projectile.GetComponent<Projectile>().movement = outputArrow;
+        }
+
+        // Movement speed
+        timerMS += Time.deltaTime;
+        if (timerMS > moveInterval)
+        {
+            timerMS -= moveInterval;
+
+            if (Vector3.Distance(transform.position, PlayerPosition.Instance.transform.position) > 5) 
+            {
+                transform.position = Vector3.MoveTowards(transform.position, PlayerPosition.Instance.transform.position, .005f);
+            }
+        }
     }
 }
