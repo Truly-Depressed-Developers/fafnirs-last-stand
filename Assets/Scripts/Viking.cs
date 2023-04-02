@@ -49,7 +49,11 @@ public class Viking : MonoBehaviour
 
             if (Vector3.Distance(transform.position, PlayerPosition.Instance.transform.position) > 5) 
             {
-                transform.position = Vector3.MoveTowards(transform.position, PlayerPosition.Instance.transform.position, .005f);
+                transform.position = Vector3.MoveTowards(
+                    new Vector3(transform.position.x, transform.position.y, 0),
+                    new Vector3(PlayerPosition.Instance.transform.position.x, PlayerPosition.Instance.transform.position.y, 0), .005f);
+                    //obrys dla siekierki i smoczka skoczka
+                    //niszczenie siekierkuf po jakim? czasie
             }
         }
     }
