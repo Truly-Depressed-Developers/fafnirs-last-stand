@@ -8,12 +8,14 @@ public class ParticleBehaviour : MonoBehaviour
     private float _particleSpeed = 5f;
     [SerializeField]
     private float _destoyTime = 1f;
-
+    [SerializeField]
+    private GameObject playerMovement;
     
     private float initialAngle;
     Vector3 fireScale;
     Vector3 scaleLimit;
     private float startTime;
+    public bool isFaster;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,8 +32,17 @@ public class ParticleBehaviour : MonoBehaviour
     {
         /*transform.position = new Vector3(0, transform.position.y + 1f * Time.deltaTime,0);*/
         /*transform.rotation = Quaternion.Euler(0, 0, initialAngle);*/
-        transform.position = transform.position + transform.up * 5f * Time.deltaTime;
+
+        if (isFaster)
+        {
+            transform.position = transform.position + transform.up * _particleSpeed * Time.deltaTime * 1.55f;
+        } else
+        {
+            transform.position = transform.position + transform.up * _particleSpeed * Time.deltaTime;
+        }
+        
         Debug.Log((Time.time - startTime) / _destoyTime);
+
         float scale = Mathf.Lerp(0.05f, 1f, (Time.time - startTime) / _destoyTime);
         transform.localScale = new Vector3(scale, scale, 1);
         /*if (transform.localScale.x < scaleLimit.x)
@@ -42,10 +53,8 @@ public class ParticleBehaviour : MonoBehaviour
         /*StartCoroutine(destroyRoutine());*/
     }
 
-    private void FixedUpdate()
-    {
 
-    }
+
     /*IEnumerator destroyRoutine()
     {
         yield return new WaitForSeconds(5f);

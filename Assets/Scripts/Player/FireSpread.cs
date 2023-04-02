@@ -47,7 +47,13 @@ public class FireSpread : MonoBehaviour {
                 GameObject particleObj = Instantiate(particle, transform.position, Quaternion.identity);
                 particleObj.transform.parent = containerFlame.transform;
                 float initialAngle = transform.rotation.eulerAngles.z + Random.Range(-10f, 10f);
-
+                if (Input.GetKey(KeyCode.W))
+                {
+                    particleObj.GetComponent<ParticleBehaviour>().isFaster = true;
+                } else
+                {
+                    particleObj.GetComponent<ParticleBehaviour>().isFaster = false;
+                }
                 particleObj.transform.rotation = Quaternion.Euler(0, 0, initialAngle);
             }
 
