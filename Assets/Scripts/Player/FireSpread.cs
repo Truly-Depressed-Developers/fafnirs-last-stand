@@ -7,16 +7,33 @@ public class FireSpread : MonoBehaviour {
     private GameObject containerFlame;
     [SerializeField]
     private GameObject particle;
-
+    [SerializeField]
+    private float fireCooldown = 100f;
+    private float fireCooldownTime = 35f;
 
     private bool canSpawn = true;
-    // Start is called before the first frame update
-    void Start() {
-
-    }
 
     // Update is called once per frame
     void Update() {
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (fireCooldown > 0)
+            {
+                fireCooldown -= fireCooldownTime * Time.deltaTime;
+            } else
+            {
+                fireCooldown = 0;
+            }
+        } else
+        {
+            if (fireCooldown < 100)
+            {
+                fireCooldown += fireCooldownTime * 0.65f * Time.deltaTime;
+            } else
+            {
+                fireCooldown = 100;
+            }
+        }
         if (Input.GetKeyDown(KeyCode.Space)) {
             canSpawn = true;
             StartCoroutine(SpawnParticlesRoutine());
@@ -41,7 +58,7 @@ public class FireSpread : MonoBehaviour {
     }
 
     IEnumerator SpawnParticlesRoutine() {
-        while (canSpawn) {
+        while (canSpawn && fireCooldown > 0) {
             Debug.Log("Test");
             for (int i = 0; i < 3; i++) {
                 GameObject particleObj = Instantiate(particle, transform.position, Quaternion.identity);
