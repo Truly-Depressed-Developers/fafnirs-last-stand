@@ -33,7 +33,11 @@ public class EnemyHealth : MonoBehaviour {
             ScoreManager.instance.AddScore(_pointsForKill);
 
             // die
-
+            Spawner.Instance.spawnCount--;
+            if (Spawner.Instance.enemiesKilled % 10 == 0)
+            {
+                Spawner.Instance.enemyCount++;
+            }
             Destroy(this.gameObject);
         }
     }

@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Spawner : MonoBehaviour {
+    public int spawnCount;
     public int enemyCount;
-    private int spawnCount;
+    public int enemiesKilled;
 
     public float vikingAttackSpeed;
     public float vikingProjectileSpeed;
@@ -14,6 +15,13 @@ public class Spawner : MonoBehaviour {
     [SerializeField] private GameObject Enemy;
     [SerializeField] private GameObject BulletsContainer;
     [SerializeField] private GameObject EnemyContainer;
+
+    public static Spawner Instance;
+    // Start is called before the first frame update
+    void Awake()
+    {
+        Instance = this;
+    }
 
     void Update() {
         if (spawnCount < enemyCount) {
@@ -32,7 +40,11 @@ public class Spawner : MonoBehaviour {
 
     Vector3 DetermineSpawnPosition() {
         float angle = Random.Range(0, Mathf.PI * 2);
-        Vector2 point = new();
+        Vector2 point = new()
+        {
+            x = Mathf.Cos(angle) + .5f,
+            y = Mathf.Sin(angle) + .5f
+        };
         point.x = Mathf.Cos(angle) + .5f;
         point.y = Mathf.Sin(angle) + .5f;
 

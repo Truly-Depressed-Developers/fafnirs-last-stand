@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: grzybunio
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 0
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings:
+    - serializedVersion: 3
+      m_BuildTarget: DefaultTexturePlatform
+      m_MaxTextureSize: 2048
+      m_ResizeAlgorithm: 0
+      m_TextureFormat: -1
+      m_TextureCompression: 0
+      m_CompressionQuality: 50
+      m_CrunchedCompression: 0
+      m_AllowsAlphaSplitting: 0
+      m_Overridden: 0
+      m_AndroidETC2FallbackOverride: 0
+      m_ForceMaximumCompressionQuality_BC6H_BC7: 0
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+      enableAlphaDilation: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: bfeff31452e91bb40b01cfe7431c7248, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21081604, guid: bfeff31452e91bb40b01cfe7431c7248, type: 3}
+  - {fileID: 644083604, guid: bfeff31452e91bb40b01cfe7431c7248, type: 3}
+  - {fileID: 1945861335, guid: bfeff31452e91bb40b01cfe7431c7248, type: 3}
+  - {fileID: 426602715, guid: bfeff31452e91bb40b01cfe7431c7248, type: 3}
+  - {fileID: -1456871001, guid: bfeff31452e91bb40b01cfe7431c7248, type: 3}
+  - {fileID: 1669825369, guid: bfeff31452e91bb40b01cfe7431c7248, type: 3}
+  - {fileID: 576344791, guid: bfeff31452e91bb40b01cfe7431c7248, type: 3}
+  - {fileID: -424416323, guid: bfeff31452e91bb40b01cfe7431c7248, type: 3}
+  - {fileID: -1988067160, guid: bfeff31452e91bb40b01cfe7431c7248, type: 3}
+  - {fileID: 1079328876, guid: bfeff31452e91bb40b01cfe7431c7248, type: 3}
+  - {fileID: 1730300781, guid: bfeff31452e91bb40b01cfe7431c7248, type: 3}
+  - {fileID: 2017792354, guid: bfeff31452e91bb40b01cfe7431c7248, type: 3}
+  - {fileID: -652796952, guid: bfeff31452e91bb40b01cfe7431c7248, type: 3}
+  - {fileID: 783932724, guid: bfeff31452e91bb40b01cfe7431c7248, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - grrzybunio_9
+  - grrzybunio_8
+  - grrzybunio_5
+  - grrzybunio_4
+  - grrzybunio_7
+  - grrzybunio_6
+  - grrzybunio_1
+  - grrzybunio_0
+  - grrzybunio_3
+  - grrzybunio_2
+  - grrzybunio_10
+  - grrzybunio_11
+  - grrzybunio_12
+  - grrzybunio_13
+  m_RenderDataMap: {}
+  m_Tag: grzybunio
+  m_IsVariant: 0

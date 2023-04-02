@@ -52,7 +52,7 @@ public class PlayerHealth : MonoBehaviour {
     private void PlayerDeath() {
         // die
 
-        OnPlayerDeath();
+        OnPlayerDeath?.Invoke();
         Destroy(this.gameObject);
     }
 }
