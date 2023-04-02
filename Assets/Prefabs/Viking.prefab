@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.8867924, g: 0.1622997, b: 0.1622997, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -99,5 +99,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   attackSpeed: 2
   Projectile: {fileID: 5928037543649067670, guid: 9c40bc43f1cda524ab230abc2b5a66c0, type: 3}
-  target: {x: 1, y: 0.5, z: 0}
+  arrowTarget: {x: 0, y: 0, z: 0}
   arrowSpeed: 0.03
+  vikingTarget: {x: 0, y: 0, z: 0}
+  vikingSpeed: 0

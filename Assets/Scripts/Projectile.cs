@@ -8,11 +8,6 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public Vector3 movement;
-    //public float arrowSpeed;
-    void Start()
-    {
-        Debug.Log("Spawned arrow");
-    }
 
     void Update()
     {
