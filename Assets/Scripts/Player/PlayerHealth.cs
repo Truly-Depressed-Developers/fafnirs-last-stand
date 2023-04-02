@@ -19,6 +19,8 @@ public class PlayerHealth : MonoBehaviour {
         _currentHp = _maxHp;
 
         AdjustHealthbar();
+
+        OnPlayerDeath += PlayerDeath;
     }
 
     public void TakeDamage(float damage) {
@@ -29,7 +31,7 @@ public class PlayerHealth : MonoBehaviour {
         if (_currentHp <= 0) {
             // die
 
-            OnPlayerDeath();
+            PlayerDeath();
         }
     }
 
@@ -47,5 +49,12 @@ public class PlayerHealth : MonoBehaviour {
         float HPPercentage = _currentHp / _maxHp;
 
         _healthbarForeground.sizeDelta = new Vector2(maxWidth * HPPercentage, _healthbarForeground.sizeDelta.y);
+    }
+
+    private void PlayerDeath() {
+        // die
+
+        OnPlayerDeath();
+        Destroy(this.gameObject);
     }
 }

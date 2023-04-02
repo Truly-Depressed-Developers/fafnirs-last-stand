@@ -20,7 +20,7 @@ public class Viking : MonoBehaviour
     [SerializeField]
     private float stopDistance;
 
-    public GameObject Bullets;
+    public GameObject BulletsContainer;
 
     void Start()
     {
@@ -37,7 +37,7 @@ public class Viking : MonoBehaviour
             arrowTarget = PlayerPosition.Instance.transform.position - transform.position;
             arrowTarget.z = 0f;
             Vector3 outputArrow = arrowTarget.normalized * projectileSpeed;
-            GameObject projectile = Instantiate(Projectile, transform.position, Quaternion.identity, Bullets.transform);
+            GameObject projectile = Instantiate(Projectile, transform.position, Quaternion.identity, BulletsContainer.transform);
             projectile.GetComponent<Projectile>().movement = outputArrow;
         }
 

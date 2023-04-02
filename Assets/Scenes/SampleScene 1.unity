@@ -13445,7 +13445,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
-  _maxspeed: 200
 --- !u!114 &1012577628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13459,6 +13458,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _maxHp: 100
+  _currentHp: 0
+  _healthbarBackground: {fileID: 0}
+  _healthbarForeground: {fileID: 0}
 --- !u!70 &1012577629
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -13606,55 +13608,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1144130841}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &1342135755
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1342135757}
-  - component: {fileID: 1342135756}
-  m_Layer: 0
-  m_Name: EnemySpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1342135756
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342135755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cfc41f8878bdcb24a84448281d0451fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemyCount: 10
-  vikingAttackSpeed: 3
-  vikingProjectileSpeed: 0.005
-  vikingSpeed: 0.05
-  Enemy: {fileID: 3556521599619915224, guid: 3ef113beb44dd7246906854c2a2cc461, type: 3}
---- !u!4 &1342135757
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1342135755}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1399454826
 GameObject:
   m_ObjectHideFlags: 3
@@ -14172,5 +14125,5 @@ Transform:
   m_Children:
   - {fileID: 708542063}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
