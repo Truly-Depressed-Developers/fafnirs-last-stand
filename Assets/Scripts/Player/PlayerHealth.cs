@@ -34,7 +34,7 @@ public class PlayerHealth : MonoBehaviour {
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
-        if (collision.tag == "Bullet") {
+        if (collision.tag == "EnemyBullet") {
             Bullet bullet = collision.GetComponent<Bullet>();
 
             TakeDamage(bullet.damage);
