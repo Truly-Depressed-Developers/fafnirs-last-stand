@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 3556521599619915231}
   - component: {fileID: 3556521599619915230}
   - component: {fileID: 3556521599619915225}
+  - component: {fileID: 3421571603038661341}
+  - component: {fileID: 8160357400488140970}
+  - component: {fileID: 1812106201344903671}
   m_Layer: 0
   m_Name: Viking
   m_TagString: Untagged
@@ -98,8 +101,70 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeed: 2
+  moveInterval: 0
   Projectile: {fileID: 5928037543649067670, guid: 9c40bc43f1cda524ab230abc2b5a66c0, type: 3}
   arrowTarget: {x: 0, y: 0, z: 0}
-  arrowSpeed: 0.03
-  vikingTarget: {x: 0, y: 0, z: 0}
-  vikingSpeed: 0
+  projectileSpeed: 0
+  stopDistance: 0
+  BulletsContainer: {fileID: 0}
+--- !u!114 &3421571603038661341
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3556521599619915224}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92aad35e575680b41b915d82ed0628bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _maxHp: 20
+  _pointsForKill: 5
+--- !u!50 &8160357400488140970
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3556521599619915224}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1812106201344903671
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3556521599619915224}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
