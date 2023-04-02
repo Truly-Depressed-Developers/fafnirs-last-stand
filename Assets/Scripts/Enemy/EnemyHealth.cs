@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyHealth : MonoBehaviour {
     [SerializeField] float _maxHp;
     float _currentHp;
-    [SerializeField] float _pointsForKill;
+    [SerializeField] int _pointsForKill;
 
 
     void Start() {
@@ -30,6 +30,7 @@ public class EnemyHealth : MonoBehaviour {
 
         if(_currentHp <= 0) {
             // add points
+            ScoreManager.instance.AddScore(_pointsForKill);
 
             // die
 
