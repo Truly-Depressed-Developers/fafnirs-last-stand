@@ -11,15 +11,13 @@ public class PlayerMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
     }
-    void Update()
-    {
-        transform.Rotate(0, 0, Input.GetAxis("Horizontal") * 40f * -Time.deltaTime * 5);
+    void FixedUpdate() {
+        transform.Rotate(0, 0, Input.GetAxis("Horizontal") * 40f * -Time.fixedDeltaTime * 5);
+
         float forward = Input.GetAxis("Vertical");
-        if (forward < 0)
-        {
+        if (forward < 0) {
             forward = 0;
         }
         body.velocity = transform.up * forward * _speed * Time.fixedDeltaTime * 50f;
-
     }
 }
